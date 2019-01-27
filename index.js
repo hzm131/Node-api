@@ -2,8 +2,9 @@ const Koa = require("koa")
 const bodyParser = require('koa-bodyparser')
 const router = require("./router")
 const ensureLogin = require("./lib/LoginJwt")
-const auth = require("./services/auth")
+const auth = require("./middleware/auth")
 const app = new Koa()
+const port = process.env.PORT || 8000
 
 
 
@@ -13,4 +14,6 @@ app
     .use(router.routes())
     .use(router.allowedMethods())
 
-app.listen(3000)
+app.listen(port,function () {
+    console.log("listening on port:",port)
+})
