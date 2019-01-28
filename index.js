@@ -6,8 +6,6 @@ const auth = require("./middleware/auth")
 const app = new Koa()
 const port = process.env.PORT || 8000
 
-
-
 app
     .use(bodyParser())
     //.use(ensureLogin(auth.deserializeUserId))
