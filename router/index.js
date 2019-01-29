@@ -4,6 +4,30 @@ const Joi = require("joi")
 const Knex = require("../db/knex")
 const model = require("../model")
 
+
+/**
+ * @swagger
+ * /get:
+ *  get:
+ *    summary: 获取用户信息
+ *    description: 获取用户的信息
+ *    tags:
+ *       - Logger
+ *    parameters:
+ *      - name: appName
+ *        in: query
+ *        required: true
+ *        description: 应用名称
+ *        type: string
+ *      - name: userId
+ *        in: query
+ *        required: true
+ *        description: 用户id
+ *        type: string
+ *    responses:
+ *      200:
+ *        description: 成功获取
+ */
 router.get("/get",async (ctx)=>{
     //await ctx.ensureLogin() //身份验证 token
     const {offset, limit} = await validate(ctx.query,{
