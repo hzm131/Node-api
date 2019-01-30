@@ -12,6 +12,8 @@
         
 orm库：bookshelf.js库
 
+测试: supertest.js库
+
 数据字段验证：joi.js库
     Joi.validate()方法传入ctx接受到的数据，再传入设置的schema(校验数据字段的怎么个校验法，比如必须是数据或者必填等)
     成功就往下走
